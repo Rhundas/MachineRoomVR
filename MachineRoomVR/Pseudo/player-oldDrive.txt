@@ -1,0 +1,15 @@
+Event: Player interacts with OldDrive
+
+MaximumDistance = 1 inch
+
+if (OldDrive is locked to Player.LHand or Player.RHand) {
+
+  OldDrive.XMomentum = 0
+  OldDrive.YMomentum = 0
+  OldDrive.Unlock
+
+} else if ((distance from Player.Hand to OldDrive.Center) < MaximumDistance) {
+  OldDrive.Move(Player.Hand.Position)
+  OldDrive.Lock(Player.Hand)
+  Player.Hand.Visible = False
+}

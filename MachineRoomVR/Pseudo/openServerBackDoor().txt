@@ -1,0 +1,2 @@
+BackDoor.PlaySound(DoorOpen)
+BackDoor.Rotate(Center = BackDoor.LeftEdge, 90 degrees, 1.5 seconds)

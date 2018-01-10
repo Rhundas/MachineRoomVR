@@ -1,0 +1,4 @@
+DisplayMessage(WinMessage)
+PlaySound(Win)
+Wait(5)
+Reset()

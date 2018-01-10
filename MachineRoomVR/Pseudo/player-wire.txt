@@ -1,0 +1,26 @@
+Event: Player interacts with Wire
+
+MaximumDistance = 1 inch
+
+if (Wire is locked to Player.LHand or Player.RHand) {
+
+  Wire.XMomentum = 0
+  Wire.YMomentum = 0
+  Wire.Unlock
+
+  if ((distance from Player.Hand to ServerDriveSocket.Center) < MaximumDistance) {
+    Wire.Lock(ServerDriveSocket.Center)
+    Wire.Gravity = False
+    Wire.Effects.Clear()
+    Win()
+  } else {
+    Wire.Gravity = True
+    Player.Hand.Visible = True
+  }
+
+
+} else if ((distance from Player.Hand to Wire.Center) < MaximumDistance) {
+  Wire.Move(Player.Hand.Position)
+  Wire.Lock(Player.Hand)
+  Player.Hand.Visible = False
+}

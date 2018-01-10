@@ -1,0 +1,25 @@
+Event: Player interacts with NewDrive
+
+MaximumDistance = 1 inch
+
+if (New Drive is locked to Player.LHand or Player.RHand) {
+
+  NewDrive.XMomentum = 0
+  NewDrive.YMomentum = 0
+  NewDrive.Unlock
+
+  if (BrokenDriveEjected and (distance from Player.Hand to ServerDriveSlot.Center) < MaximumDistance) {
+    NewDrive.Lock(ServerDriveSlot.Center)
+    MewDrive.Gravity = False
+    openServerBackDoor()
+    closeServerFrontDoor()
+  } else {
+    NewDrive.Gravity = True
+    Player.Hand.Visible = True
+  }
+
+} else if ((distance from Player.Hand to NewDrive.Center) < MaximumDistance) {
+  NewDrive.Move(Player.Hand.Position)
+  NewDrive.Lock(Player.Hand)
+  Player.Hand.Visible = False
+}

@@ -1,0 +1,10 @@
+Event: Player interacts with DriveEjectButton
+
+DriveEjectButton.PlayNoise()
+DriveEjectButton.ButtonPressAnimation()
+
+if (!BrokenDriveEjected) {
+  BrokenDrive.Lock = False
+  BrokenDrive.Gravity = True
+  BrokenDrive.XMomentum = 3mph
+}

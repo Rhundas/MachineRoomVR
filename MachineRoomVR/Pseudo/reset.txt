@@ -1,0 +1,21 @@
+NewDrive.ResetLocation
+
+BrokenDriveEjected = False
+BrokenDrive.Lock(ServerDiskSlot)
+BrokenDrive.ApplyEffect(Smoking)
+BrokenDrive.Gravity = False
+
+ServerFrontDoor.Reset()
+ServerBackDoor.Reset()
+
+PlayerPosition.Reset()
+Player.Hands.Visible = True()
+
+NewDrive.ResetPosition()
+NewDrive.Gravity = True
+
+Wire.ResetPosition()
+Wire.ApplyEffect(Sparking)
+
+DisplayMessage(DisplayMessage)
+ActivateAICompanion()
